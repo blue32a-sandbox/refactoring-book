@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  node:
+    image: node:20
+    volumes:
+      - .:/home/app:delegated
+    working_dir: /home/app
+    tty: true
