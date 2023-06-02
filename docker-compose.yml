@@ -5,5 +5,9 @@ services:
     image: node:20
     volumes:
       - .:/home/app:delegated
+      - node_modules:/home/app/node_modules
     working_dir: /home/app
     tty: true
+
+volumes:
+  node_modules:
