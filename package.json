@@ -2,8 +2,9 @@
   "name": "refactoring-book",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "devDependencies": {
     "jest": "^29.5.0"

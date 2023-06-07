@@ -1,4 +1,4 @@
-function statement (invoice, plays) {
+export default function statement (invoice, plays) {
   const statementData = {};
   statementData.customer = invoice.customer;
   statementData.performances = invoice.performances.map(enrichPerformance);
@@ -68,5 +68,3 @@ function renderPlainText(data, plays) {
                           minimumFractionDigits: 2 }).format(aNumber/100);
   }
 }
-
-exports.statement = statement;

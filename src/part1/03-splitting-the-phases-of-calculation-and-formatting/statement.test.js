@@ -1,6 +1,8 @@
-const plays = require('../data/plays.json');
-const invoices = require('../data/invoices.json');
-const { statement } = require('./statement');
+import fs from 'fs';
+import statement from './statement';
+
+const plays = JSON.parse(fs.readFileSync('src/part1/data/plays.json', 'utf8'));
+const invoices = JSON.parse(fs.readFileSync('src/part1/data/invoices.json', 'utf8'));
 
 test("statement関数は劇と請求のデータから請求書を作成する", () => {
   const result = statement(invoices[0], plays);
