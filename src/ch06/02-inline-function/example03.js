@@ -5,9 +5,6 @@
 function reportLines(aCustomer) {
   const lines = [];
   lines.push(["name", aCustomer.name]);
-  gatherCustomerData(lines, aCustomer);
+  lines.push(["locaton", aCustomer.location]);
   return lines;
-}
-function gatherCustomerData(out, aCustomer) {
-  out.push(["locaton", aCustomer.location]);
 }
