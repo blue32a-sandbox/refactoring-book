@@ -1,7 +1,4 @@
-let defaultOwner = {firstName: "Martin", lastName: "Fowler"};
-
-function getDefaultOwner() {return defaultOwner;}
-function setDefaultOwner(arg) {defaultOwner = arg;}
+import { getDefaultOwner, setDefaultOwner } from "./defaultOwner.js";
 
 const spaceship = {};
 spaceship.owner = getDefaultOwner();
