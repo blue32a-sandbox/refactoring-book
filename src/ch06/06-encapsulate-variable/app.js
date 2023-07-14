@@ -1,9 +1,9 @@
-import { getDefaultOwner, setDefaultOwner } from "./defaultOwner.js";
+import { defaultOwner, setDefaultOwner } from "./defaultOwner.js";
 
 const spaceship = {};
-spaceship.owner = getDefaultOwner();
+spaceship.owner = defaultOwner();
 
 setDefaultOwner({firstName: "Rebecca", lastName: "Parsons"});
 
 console.log(spaceship.owner);
-console.log(getDefaultOwner());
+console.log(defaultOwner());
