@@ -4,7 +4,7 @@ services:
   node:
     image: node:20
     volumes:
-      - .:/home/app:delegated
+      - .:/home/app:cached
       - node_modules:/home/app/node_modules
     working_dir: /home/app
     tty: true
