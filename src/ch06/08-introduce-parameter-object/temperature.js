@@ -27,9 +27,10 @@ const operatingPlan = {
   tempertureCeiling: 57,
 };
 
+const range = new NumberRange(operatingPlan.tempertureFloor, operatingPlan.tempertureCeiling);
 const alerts = readingsOutsideRange(
   station,
   operatingPlan.tempertureFloor,
   operatingPlan.tempertureCeiling,
-  null
+  range
 );
