@@ -1,4 +1,4 @@
-import { baseRate } from './lib.js';
+import { baseRate, taxThreshold } from './lib.js';
 
 export class Reading {
   constructor(data) {
@@ -13,5 +13,8 @@ export class Reading {
   get year() {return this._year;}
   get baseCharge() {
     return baseRate(this.month, this.year) * this.quantity;
+  }
+  get taxableChange() {
+    return Math.max(0, this.baseCharge - taxThreshold(this.year));
   }
 }
