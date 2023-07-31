@@ -1,11 +1,7 @@
-import { acquireReading, baseRate } from './lib.js';
+import { acquireReading } from './lib.js';
 import { Reading } from './reading.js';
 
 const rawReading = acquireReading();
 const aReading = new Reading(rawReading);
-const basicChargeAmount = calculateBaseCharge(aReading);
+const basicChargeAmount = aReading.calculateBaseCharge;
 console.log(basicChargeAmount);
-
-function calculateBaseCharge(aReading) {
-  return baseRate(aReading.month, aReading.year) * aReading.quantity;
-}
