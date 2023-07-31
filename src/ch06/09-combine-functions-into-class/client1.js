@@ -1,7 +1,7 @@
-import { acquireReading, baseRate } from './lib.js';
+import { acquireReading } from './lib.js';
 import { Reading } from './reading.js';
 
 const rawReading = acquireReading();
 const aReading = new Reading(rawReading);
-const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;
+const baseCharge = aReading.baseCharge;
 console.log(baseCharge);
