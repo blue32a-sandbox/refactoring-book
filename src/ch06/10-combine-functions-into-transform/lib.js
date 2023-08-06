@@ -13,6 +13,7 @@ export function enrichReading(original) {
   const result = _.cloneDeep(original);
   result.customer = "hoge";
   result.baseCharge = calculateBaseCharge(result);
+  result.taxbleCharge = Math.max(0, result.baseCharge - taxThreshold(result.year));
   return result;
 
   function calculateBaseCharge(aReading) {

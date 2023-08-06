@@ -1,7 +1,6 @@
-import { acquireReading, baseRate, taxThreshold } from './lib.js';
+import { acquireReading, enrichReading } from './lib.js';
 
-const aReading = acquireReading();
-const base = (baseRate(aReading.month, aReading.year) * aReading.quantity);
-console.log(base);
-const taxbleCharge = Math.max(0, base - taxThreshold(aReading.year));
-console.log(taxbleCharge);
+const rawReading = acquireReading();
+const aReading = enrichReading(rawReading);
+console.log(aReading.baseCharge);
+console.log(aReading.taxbleCharge);
