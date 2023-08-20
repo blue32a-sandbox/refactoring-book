@@ -1,4 +1,11 @@
-const customerData = {
+class CustomerData {
+  constructor(data) {
+    this._data = data;
+  }
+}
+
+let customerData;
+setRawDataOfCustomers({
   "1920": {
     name: "martin",
     id: "1920",
@@ -67,7 +74,8 @@ const customerData = {
       }
     }
   }
-}
+});
 
-export function getRawDataOfCustomers() {return customerData;}
-export function setRawDataOfCustomers(arg) {customerData = arg;}
+export function getCustomerData() {return customerData;}
+export function getRawDataOfCustomers() {return customerData._data;}
+export function setRawDataOfCustomers(arg) {customerData = new CustomerData(arg);}
