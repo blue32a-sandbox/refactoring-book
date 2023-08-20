@@ -1,6 +1,6 @@
-import { getRawDataOfCustomers } from "./customer.js";
+import { getRawDataOfCustomers, setUsage } from "./customer.js";
 
-getRawDataOfCustomers()["1920"].usages["2016"]["1"] = 70;
+setUsage("1920", "2016", "1", 70);
 console.log(getRawDataOfCustomers()["1920"].usages["2016"]["1"]);
 
 function compareUsage(customerID, laterYear, month) {
