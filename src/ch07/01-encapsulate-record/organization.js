@@ -1,3 +1,10 @@
-const organization = {name: "Acme Goosebeeries", country: "GB"};
+class Organization {
+  constructor(data) {
+    this._data = data;
+  }
+}
 
-export function getRawDataOfOrganization() {return organization;}
+const organization = new Organization({name: "Acme Goosebeeries", country: "GB"});
+
+export function getRawDataOfOrganization() {return organization._data;}
+export function getOrganization() {return organization;}
