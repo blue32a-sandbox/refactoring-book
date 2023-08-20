@@ -1,9 +1,9 @@
-import { organization } from "./organization.js";
+import { getRawDataOfOrganization } from "./organization.js";
 
 let result = '';
-result += `<h1>${organization.name}</h1>`;
+result += `<h1>${getRawDataOfOrganization().name}</h1>`;
 console.log(result);
 
 const newName = 'Example';
-organization.name = newName;
-console.log(organization);
+getRawDataOfOrganization().name = newName;
+console.log(getRawDataOfOrganization());
