@@ -1,4 +1,4 @@
-export const customerData = {
+const customerData = {
   "1920": {
     name: "martin",
     id: "1920",
@@ -68,3 +68,6 @@ export const customerData = {
     }
   }
 }
+
+export function getRawDataOfCustomers() {return customerData;}
+export function setRawDataOfCustomers(arg) {customerData = arg;}
