@@ -4,7 +4,7 @@ export class Person {
     this._courses = [];
   }
   get name() {return this._name;}
-  get courses() {return this._courses;}
+  get courses() {return this._courses.splice();}
   addCourse(aCourse) {
     this._courses.push(aCourse);
   }
