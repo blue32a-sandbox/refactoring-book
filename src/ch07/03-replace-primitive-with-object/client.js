@@ -7,7 +7,6 @@ orders.push(new Order({priority: "high"}));
 orders.push(new Order({priority: "rush"}));
 orders.push(new Order({priority: new Priority("rush")}));
 
-const highPriorityCount = orders.filter(o => "high" === o.priority.toString()
-                                          || "rush" === o.priority.toString())
+const highPriorityCount = orders.filter(o => o.priority.higherThan(new Priority("normal")))
                                 .length;
 console.log(highPriorityCount);
