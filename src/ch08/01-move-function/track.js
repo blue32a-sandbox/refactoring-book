@@ -9,11 +9,7 @@ function trackSummary(points) {
   };
 
   function calculateDistance() {
-    let result = 0;
-    for (let i = 1; i < points.length; i++) {
-      result += distance(points[i - 1], points[i]);
-    }
-    return result;
+    top_calculateDistance(points);
   }
 
   function calculateTime() {}
