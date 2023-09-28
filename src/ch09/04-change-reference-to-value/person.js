@@ -1,6 +1,6 @@
 class Person {
-  constructor() {
-    this._telephoneNumber = new TelephoneNumber();
+  constructor(data) {
+    this._telephoneNumber = new TelephoneNumber(data.areaCode, data.number);
   }
 
   get officeAreaCode() {return this._telephoneNumber.areaCode;}
@@ -10,6 +10,11 @@ class Person {
 }
 
 class TelephoneNumber {
+  constructor(areaCode, number) {
+    this._areaCode = areaCode;
+    this._number = number;
+  }
+
   get areaCode() {return this._areaCode;}
   set areaCode(arg) {this._areaCode = arg;}
 
