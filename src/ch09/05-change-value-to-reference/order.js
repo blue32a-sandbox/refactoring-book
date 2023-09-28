@@ -1,7 +1,9 @@
+import { registerCustomer } from "./customer.js";
+
 class Order {
   constructor(data) {
     this._number = data.number;
-    this._customer = new Customer(data.customer);
+    this._customer = registerCustomer(data.customer)
     // 他のデータをロードする
   }
   get customer() {return this._customer;}
