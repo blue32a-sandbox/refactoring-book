@@ -7,7 +7,7 @@ class Order {
   get customer() {return this._customer;}
 }
 
-class Customer {
+export class Customer {
   constructor(id) {
     this._id = id;
   }
