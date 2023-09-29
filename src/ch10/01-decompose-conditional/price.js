@@ -1,7 +1,4 @@
-if (summer())
-  charge = summerCharge();
-else
-  charge = regularChage();
+charge = summer() ? summerCharge() : regularChage();
 
 function summer() {
   return !aData.isBefore(plan.summerStart) && !aData.isAfter(plan.summerEnd);
