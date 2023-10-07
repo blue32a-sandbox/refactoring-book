@@ -6,11 +6,33 @@ function speeds(birds) {
 }
 
 function plumage(bird) {
-  return new Bird(bird).plumage;
+  return createBird(bird).plumage;
 }
 
 function airSpeedVelocity(bird) {
-  return new Bird(bird).airSpeedVelocity;
+  return createBird(bird).airSpeedVelocity;
+}
+
+function createBird(bird) {
+  switch (bird.type) {
+  case new EuropeanSwallow(bird):
+    return "average";
+  case 'AfricanSwallow':
+    return new AfricanSwallow(bird);
+  case 'NorwegianBlueParrot':
+    return new NorwegianBlueParrot(bird);
+  default:
+    return new Bird(bird);
+  }
+}
+
+class EuropeanSwallow extends Bird {
+}
+
+class AfricanSwallow extends Bird {
+}
+
+class NorwegianBlueParrot extends Bird {
 }
 
 class Bird {
