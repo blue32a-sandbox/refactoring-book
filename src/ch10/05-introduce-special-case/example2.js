@@ -23,10 +23,6 @@ function createUnknownCustomer() {
   };
 }
 
-function isUnknown(arg) {
-  return arg.isUnknown;
-}
-
 // Client 1...
 const aCustomer = site.customer;
 // ... 大量のコードが入る ...
