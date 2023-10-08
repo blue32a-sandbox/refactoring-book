@@ -8,25 +8,6 @@ function createRating(voyage, history) {
   else return new Rating(voyage, history);
 }
 
-class ExperiencedChinaRating extends Rating {
-  get captainHistoryRisk() {
-    const result = super.captainHistoryRisk - 2;
-    return Math.max(result, 0);
-  }
-  get voyageProfitFactor() {
-    return super.voyageProfitFactor + 3;
-  }
-  get voyageLengthFactor() {
-    let result = 0;
-    if (this.voyage.length > 12) result += 1;
-    if (this.voyage.length > 18) result -= 1;
-    return result;
-  }
-  get historyLengthFactor() {
-    return (this.history.length > 10) ? 1 : 0;
-  }
-}
-
 class Rating {
   constructor(voyage, history) {
     this.voyage = voyage;
@@ -66,7 +47,23 @@ class Rating {
   get historyLengthFactor() {
     return (this.history.length > 8) ? 1 : 0;
   }
-  get hasChinaHistory() {
-    return this.history.some(v => "china" === v.zone)
+}
+
+class ExperiencedChinaRating extends Rating {
+  get captainHistoryRisk() {
+    const result = super.captainHistoryRisk - 2;
+    return Math.max(result, 0);
+  }
+  get voyageLengthFactor() {
+    let result = 0;
+    if (this.voyage.length > 12) result += 1;
+    if (this.voyage.length > 18) result -= 1;
+    return result;
+  }
+  get historyLengthFactor() {
+    return (this.history.length > 10) ? 1 : 0;
+  }
+  get voyageProfitFactor() {
+    return super.voyageProfitFactor + 3;
   }
 }
