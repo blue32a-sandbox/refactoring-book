@@ -3,10 +3,15 @@ class Site {
 }
 
 class Customer {
+  get isUnknown() {return false;}
   get name() {}
   get billingPlan() {}
   set billingPlan(arg) {}
   get paymentHistory() {}
+}
+
+class UnknownCustomer {
+  get isUnknown() {return true;}
 }
 
 // Client 1...
