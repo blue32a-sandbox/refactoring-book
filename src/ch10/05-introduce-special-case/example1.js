@@ -14,6 +14,7 @@ class Customer {
 
 class UnknownCustomer {
   get isUnknown() {return true;}
+  get name() {return "occupant";}
 }
 
 function isUnknown(arg) {
@@ -25,9 +26,7 @@ function isUnknown(arg) {
 // Client 1...
 const aCustomer = site.customer;
 // ... 大量のコードが入る ...
-let customerName;
-if (isUnknown(aCustomer)) customerName = "occupant";
-else customerName = aCustomer.name;
+let customerName= aCustomer.name;
 
 // Client 2...
 const plan = (isUnknown(aCustomer)) ?
