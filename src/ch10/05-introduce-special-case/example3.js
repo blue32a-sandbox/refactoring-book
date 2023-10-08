@@ -12,7 +12,8 @@ function enrichSite(inputSite) {
 }
 
 function isUnknown(arg) {
-  return arg === "unknown";
+  if (arg === "unknown") return true;
+  else return arg.isUnknown;
 }
 
 // Client 1...
