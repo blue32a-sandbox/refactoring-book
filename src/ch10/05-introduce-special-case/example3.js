@@ -1,5 +1,12 @@
+import _ from "lodash";
+
+function enrichSite(inputSite) {
+  return _.cloneDeep(inputSite);
+}
+
 // Client 1...
-const site = acquireSiteData();
+const rawSite = acquireSiteData();
+const site = enrichSite(rawSite);
 const aCustomer = site.customer;
 // ... 大量のコードが入る ...
 let customerName;
