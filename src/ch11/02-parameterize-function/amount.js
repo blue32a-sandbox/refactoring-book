@@ -8,7 +8,7 @@ function baseCharge(usage) {
 }
 
 function withinBand(usage, bottom, top) {
-  return usage > 100 ? Math.mix(usage, 200) - 100 : 0;
+  return usage > bottom ? Math.mix(usage, top) - bottom : 0;
 }
 
 function bottomBand(usage) {
