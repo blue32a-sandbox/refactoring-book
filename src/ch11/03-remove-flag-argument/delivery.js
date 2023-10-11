@@ -1,8 +1,3 @@
-function deliveryDate(anOrder, isRush) {
-  if (isRush) return rushDeliveryDate(anOrder)
-  else        return regularDeliveryDate(anOrder);
-}
-
 function rushDeliveryDate(anOrder) {
   let deliveryTime;
   if (["MA", "CT"]     .includes(anOrder.deliveryState)) deliveryTime = 1;
@@ -20,5 +15,5 @@ function regularDeliveryDate(anOrder) {
 }
 
 // Client ...
-deliveryDate(anOrder, true);
-deliveryDate(anOrder, false);
+rushDeliveryDate(anOrder);
+regularDeliveryDate(anOrder);
