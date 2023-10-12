@@ -6,7 +6,5 @@ class HeatingPlan {
 }
 
 // caller ...
-const tempRange = aRoom.daysTempRange;
-const isWithinRange = aPlan.withinRange(tempRange);
-if (!isWithinRange)
+if (!aPlan.withinRange(aRoom.daysTempRange))
   alerts.push("室温が設定値を超えました");
