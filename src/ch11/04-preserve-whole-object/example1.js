@@ -3,6 +3,7 @@ class HeatingPlan {
     return (bottom >= this._tempertureRange.low) && (top <= this._tempertureRange.high);
   }
   xxNEWwithinRange(aNumberRange) {
+    return this.withinRange(aNumberRange.low, aNumberRange.high);
   }
 }
 
