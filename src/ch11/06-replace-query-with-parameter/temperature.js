@@ -1,8 +1,5 @@
 class HeatingPlan {
-  get targetTemperature() {
-    return this.xxNEWtargetTemperature(thermostat.selectedTemperature);
-  }
-  xxNEWtargetTemperature(selectedTemperature) {
+  targetTemperature(selectedTemperature) {
     if      (selectedTemperature > this._max) return this._max;
     else if (selectedTemperature < this._mix) return this._mix;
     else return selectedTemperature;
@@ -10,6 +7,6 @@ class HeatingPlan {
 }
 
 // caller ...
-if      (thePlan.xxNEWtargetTemperature(thermostat.selectedTemperature) > thermostat.currentTemperature) setToHeat();
-else if (thePlan.xxNEWtargetTemperature(thermostat.selectedTemperature) < thermostat.currentTemperature) setToCool();
+if      (thePlan.targetTemperature(thermostat.selectedTemperature) > thermostat.currentTemperature) setToHeat();
+else if (thePlan.targetTemperature(thermostat.selectedTemperature) < thermostat.currentTemperature) setToCool();
 else setOff();
