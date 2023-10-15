@@ -12,7 +12,11 @@ class Employee {
   }
 }
 
-// caller...
-const candidate = new Employee(document.name, document.empType);
+function createEmployee(name, typeCode) {
+  return new Employee(name, typeCode);
+}
 
-const leadEngineer = new Employee(document.leadEngineer, 'E');
+// caller...
+const candidate = createEmployee(document.name, document.empType);
+
+const leadEngineer = createEmployee(document.leadEngineer, 'E');
