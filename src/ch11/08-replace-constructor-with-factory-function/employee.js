@@ -16,7 +16,11 @@ function createEmployee(name, typeCode) {
   return new Employee(name, typeCode);
 }
 
+function craeteEngineer(name) {
+  return new Employee(name, 'E');
+}
+
 // caller...
 const candidate = createEmployee(document.name, document.empType);
 
-const leadEngineer = createEmployee(document.leadEngineer, 'E');
+const leadEngineer = craeteEngineer(document.leadEngineer);
