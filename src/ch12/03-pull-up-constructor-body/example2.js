@@ -8,7 +8,11 @@ class Manager extends Employee {
   constructor(name, grade) {
     super(name);
     this._grade = grade;
-    if (this.isPrivileged) this.assignCar(); // すべてのサブクラスでこの処理を行っている
+    this.finishConstruction();
+  }
+
+  finishConstruction() {
+    if (this.isPrivileged) this.assignCar();
   }
 
   get isPrivileged() {
