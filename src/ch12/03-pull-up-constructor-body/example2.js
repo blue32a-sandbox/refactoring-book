@@ -1,5 +1,8 @@
 class Employee {
   constructor (name) {/* ... */}
+  finishConstruction() {
+    if (this.isPrivileged) this.assignCar();
+  }
   get isPrivileged() {/* ... */}
   assignCar() {/* ... */}
 }
@@ -9,10 +12,6 @@ class Manager extends Employee {
     super(name);
     this._grade = grade;
     this.finishConstruction();
-  }
-
-  finishConstruction() {
-    if (this.isPrivileged) this.assignCar();
   }
 
   get isPrivileged() {
