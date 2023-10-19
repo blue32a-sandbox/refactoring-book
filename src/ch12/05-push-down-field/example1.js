@@ -11,3 +11,7 @@ class Employee {
   }
   toString() {return `${this._name} (${this._type})`;}
 }
+
+class Engineer extends Employee {
+  get type() {return "engineer";}
+}
