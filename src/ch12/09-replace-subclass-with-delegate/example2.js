@@ -28,7 +28,9 @@ class Bird {
   get plumage() {
     return this._plumage || "average";
   }
-  get airSpeedVelocity() {return null;}
+  get airSpeedVelocity() {
+    return this._speciesDelegate ? this._speciesDelegate.airSpeedVelocity : null;
+  }
 }
 
 class EuropeanSwallow extends Bird {
