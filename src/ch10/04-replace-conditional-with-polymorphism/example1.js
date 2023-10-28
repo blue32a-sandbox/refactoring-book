@@ -11,8 +11,8 @@ function speeds(birds) {
 
 function createBird(bird) {
   switch (bird.type) {
-  case new EuropeanSwallow(bird):
-    return "average";
+  case 'EuropeanSwallow':
+    return new EuropeanSwallow(bird);
   case 'AfricanSwallow':
     return new AfricanSwallow(bird);
   case 'NorwegianBlueParrot':
