@@ -22,13 +22,13 @@ class PremiumBooking extends Booking {
     this._extras = extras;
   }
   get hasTalkback() {
-    return this._show.hasOwnProperty('talkback');
+    return this._premiumDelegate.hasTalkback;
   }
   get basePrice() {
     return Math.round(super.basePrice + this._extras.premiumFee);
   }
   get hasDinner() {
-    return this.extras.hasOwnProperty('dinner') && !this.isPeakDay;
+      return this.extras.hasOwnProperty('dinner') && !this.isPeakDay;
   }
 }
 
@@ -36,6 +36,9 @@ class PremiumBookingDelegate {
   constructor(hostBooking, extras) {
     this._host = hostBooking;
     this._extras = extras;
+  }
+  get hasTalkback() {
+    return this._host._show.hasOwnProperty('talkback');
   }
 }
 
