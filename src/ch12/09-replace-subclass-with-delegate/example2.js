@@ -1,7 +1,5 @@
 function createBird(bird) {
   switch (bird.type) {
-  case 'EuropeanSwallow':
-    return new EuropeanSwallow(bird);
   case 'AfricanSwallow':
     return new AfricanSwallow(bird);
   case 'NorwegianBlueParrot':
@@ -31,10 +29,6 @@ class Bird {
   get airSpeedVelocity() {
     return this._speciesDelegate ? this._speciesDelegate.airSpeedVelocity : null;
   }
-}
-
-class EuropeanSwallow extends Bird {
-  get airSpeedVelocity() {return this._speciesDelegate.airSpeedVelocity;}
 }
 
 class EuropeanSwallowDelegate {
