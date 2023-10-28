@@ -56,14 +56,14 @@ class NorwegianBlueParrot extends Bird {
     if (this.voltage > 100) return "scorched";
     else return this._plumage || "beautiful";
   }
-  get airSpeedVelocity() {
-    return (this.isNailed) ? 0 : 10 + this.voltage / 10;
-  }
 }
 
 class NorwegianBlueParrotDelegate {
   constructor(data) {
     this._voltage = data.voltage;
     this._isNailed = data.isNailed;
+  }
+  get airSpeedVelocity() {
+    return (this._isNailed) ? 0 : 10 + this._voltage / 10;
   }
 }
